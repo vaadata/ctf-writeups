@@ -17,6 +17,7 @@ plugins:
       categories:
         - categories
         - tags
+  - blog
 theme:
   name: material
   features:
@@ -36,8 +37,6 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
-plugins:
-  - blog
 nav:
   - Blog:
     - blog/index.md
