@@ -41,17 +41,12 @@ resource "digitalocean_app" "blog" {
 
     static_site {
       name          = "blog"
-      build_command = "pip install git+https://${GH_TOKEN}@github.com/squidfunk/mkdocs-material-insiders.git p && mkdocs build"
+      build_command = "pip install git+https://${var.gh_token}@github.com/squidfunk/mkdocs-material-insiders.git p && mkdocs build"
       output_dir    = "site"
       github {
         repo = "vaadata/blog"
         branch = "main"
         deploy_on_push = true
-      }
-
-      env {
-        key = "GH_TOKEN"
-        value = var.gh_token
       }
     }
   }
