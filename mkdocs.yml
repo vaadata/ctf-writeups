@@ -1,0 +1,8 @@
+site_name: My Docs
+theme:
+  name: material
+plugins:
+  - blog
+nav:
+  - Blog:
+    - blog/index.md
