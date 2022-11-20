@@ -1,4 +1,4 @@
-site_name: My Docs
+site_name: CTF Writeups
 theme:
   name: material
 plugins:
