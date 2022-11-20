@@ -17,7 +17,6 @@ plugins:
       categories:
         - categories
         - tags
-  - blog
 theme:
   name: material
   features:
