@@ -3,19 +3,25 @@ date: 2022-11-20
 authors:
   - techbrunch
 tags:
-  - CTF
+  - GreHack22
 categories:
   - stegano
-description: This animal tries to tell us something…
+description: A couple of writeups for the stegano challenges of the GreHack CTF 2022.
 ---
 
-# Let’s do Pika Pika - Stegano
+# GreHack 2022 - Stegano
+
+A couple of writeups for the stegano challenges of the GreHack CTF 2022.
+
+<!-- more -->
+
+## Let’s do Pika Pika
 
 > This animal tries to tell us something…
 >
 > Author: Jonathan MAROTTA#9819 / eXraZ
 
-<!-- more -->
+![](grehack2022/Lets-do-Pika-Pika.jpg)
 
 ```
 ❯ binwalk --dd='.*' Lets-do-Pika-Pika.jpg
@@ -87,6 +93,8 @@ Archive:  00000111.zip
 ❯ open image.png
 ```
 
+In the image we can see:
+
 > GH22{Kn0W_y0Ur_f1L3_5trUcTur3_last_modified:yyyy/mm/ddhh:mm:ss}
 >
 > Almost there .... complete with last modification date and time of PKZip archive
@@ -115,3 +123,24 @@ Zip File Name                   :
 ```
 
 FLAG: GH22{Kn0W_y0Ur_f1L3_5trUcTur3_last_modified:2022/10/15_14:38:34}
+
+## Periodic Table
+
+![](grehack2022/my_periodic_table.png)
+
+> Je ne me souviens plus comment j'ai caché ma clé dans ce fichier, mais je me suis laissé tous les indices nécessaires dans cette image ...
+>
+>Author: Jonathan MAROTTA#9819 / eXraZ
+
+Using [StegOnline](https://stegonline.georgeom.net/extract) we can extract the flag with the following settings:
+
+- Pixel Order: Row
+- Bit Order: MSB
+- Bit Plane Order: G B R
+- Trim Trailing Bits
+
+We deduced the value from the picture, the colors give use the order and the row gives us the bits.
+
+```
+GH22{LSB  _h1dd1ng  _c4N_b3_  d0n3_1N_  mult1pL3  _w4ys}..  m.......  .......m  ..m..m..  m..m..m.  .m..m..m  ........  ........  ........ 
+```
